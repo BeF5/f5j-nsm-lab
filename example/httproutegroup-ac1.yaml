@@ -1,0 +1,10 @@
+apiVersion: specs.smi-spec.io/v1alpha3
+kind: HTTPRouteGroup
+metadata:
+  name: route-group
+  namespace: staging
+spec:
+  matches:
+  - name: target-ua
+    headers:
+    - User-Agent: ".*curl.*"

@@ -1,0 +1,22 @@
+apiVersion: specs.smi.nginx.com/v1alpha2
+kind: RateLimit
+metadata:
+  name: ratelimit-v1
+  namespace: staging
+spec:
+  sources:
+  - kind: Deployment
+    name: productpage-v1
+    namespace: staging
+  destination:
+    kind: Service
+    name: reviews
+    namespace: staging
+  name: 1rm
+  rate: 1r/m
+  delay: nodelay
+  rules:
+  - kind: HTTPRouteGroup
+    name: route-group
+    matches:
+    - target-ua
