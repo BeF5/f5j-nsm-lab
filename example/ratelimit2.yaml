@@ -1,7 +1,7 @@
 apiVersion: specs.smi.nginx.com/v1alpha2
 kind: RateLimit
 metadata:
-  name: ratelimit-v1
+  name: ratelimit-v2
   namespace: staging
 spec:
   sources:
